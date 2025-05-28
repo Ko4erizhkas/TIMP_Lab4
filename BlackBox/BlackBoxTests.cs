@@ -22,6 +22,36 @@ public class POLIZTests
     }
 
     [TestMethod]
+    public void ConvertToPoliz_SimpleSubtraction_ReturnCorrectExpression()
+    {
+        string infix = "3 - 2";
+        string expectedPostfix = "3 2 -";
+
+        var poliz = new POLIZ(infix);
+
+        Assert.AreEqual(expectedPostfix, poliz.postfixExpr, "expectedPostfix должен быть корректной ОПЗ");
+    }
+    [TestMethod]
+    public void ConvetrToPoliz_SimpleMultiplication_ReturnCorrectExpression()
+    {
+        string infix = "3 * 2";
+        string expectedPostfix = "3 2 *";
+
+        var poliz = new POLIZ(infix);
+
+        Assert.AreEqual(expectedPostfix, poliz.postfixExpr, "expectedPostfix должен быть корректной ОПЗ");
+    }
+    [TestMethod]
+    public void ConvetrToPoliz_SimpleDivide_ReturnCorrectExpression()
+    {
+        string infix = "6 / 2";
+        string expectedPostfix = "6 2 /";
+
+        var poliz = new POLIZ(infix);
+
+        Assert.AreEqual(expectedPostfix, poliz.postfixExpr, "expectedPostfix должен быть корректной ОПЗ");
+    }
+    [TestMethod]
     public void Calc_SimpleAddition_ReturnsCorrectResult()
     {
         // Arrange
