@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35919.96
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TIMP_Lab4", "TIMP_Lab5\TIMP_Lab4.csproj", "{C1CA28CB-DD67-4E48-B0C5-5784878F9D5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhiteBox", "WhiteBox\WhiteBox.csproj", "{383F5449-854A-4DB0-BF31-EDD471282484}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackBox", "BlackBox\BlackBox.csproj", "{0D0A01A4-E223-4389-82D5-951FCE0208B7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C1CA28CB-DD67-4E48-B0C5-5784878F9D5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1CA28CB-DD67-4E48-B0C5-5784878F9D5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1CA28CB-DD67-4E48-B0C5-5784878F9D5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1CA28CB-DD67-4E48-B0C5-5784878F9D5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{383F5449-854A-4DB0-BF31-EDD471282484}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{383F5449-854A-4DB0-BF31-EDD471282484}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{383F5449-854A-4DB0-BF31-EDD471282484}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{383F5449-854A-4DB0-BF31-EDD471282484}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D0A01A4-E223-4389-82D5-951FCE0208B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D0A01A4-E223-4389-82D5-951FCE0208B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D0A01A4-E223-4389-82D5-951FCE0208B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D0A01A4-E223-4389-82D5-951FCE0208B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B1C0124F-0145-4EF3-88EF-8D9A437DE8BA}
+	EndGlobalSection
+EndGlobal
