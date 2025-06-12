@@ -1,12 +1,4 @@
 ﻿namespace TIMP_Lab5;
-public enum Operators
-{
-    Add = '+',
-    Divide = '/',
-    Multiply = '*',
-    Subtracting = '-',
-
-}
 public class POLIZ
 {
     public string infixExpr { get; private set; }
@@ -15,7 +7,7 @@ public class POLIZ
     private readonly Dictionary<char, int> operPriority = new Dictionary<char, int>
     {
         { '(', 0},
-        { '+', 1 },
+        { '+', 1},
         { '-', 1},
         { '*', 2},
         { '/', 2},
@@ -97,58 +89,43 @@ public class POLIZ
         '*' => first * second,
         '/' => (first == 0) || (second == 0) ? throw new DivideByZeroException("Деление на ноль") : first / second,
         '^' => Math.Pow(first, second),
-        _ => throw new ArgumentException("Неизвестный оператор")
+        _ => throw new InvalidOperationException("Неизвестный оператор")
     };
 
     public double Calc()
     {
-        //	Стек для хранения чисел
         Stack<double> locals = new();
-        //	Счётчик действий
         int counter = 0;
 
-        //	Проходим по строке
         for (int i = 0; i < postfixExpr.Length; i++)
         {
-            //	Текущий символ
             char c = postfixExpr[i];
 
-            //	Если символ число
             if (Char.IsDigit(c))
             {
-                //	Парсим
                 string number = GetStringNumber(postfixExpr, ref i);
-                //	Заносим в стек, преобразовав из String в Double-тип
+
                 locals.Push(Convert.ToDouble(number));
             }
-            //	Если символ есть в списке операторов
             else if (operPriority.ContainsKey(c))
             {
-                //	Прибавляем значение счётчику
+
                 counter += 1;
-                //	Проверяем, является ли данный оператор унарным
+                
                 if (c == '~')
                 {
-                    //	Проверяем, пуст ли стек: если да - задаём нулевое значение,
-                    //	еси нет - выталкиваем из стека значение
                     double last = locals.Count > 0 ? locals.Pop() : 0;
 
-                    //	Получаем результат операции и заносим в стек
                     locals.Push(Execute('-', 0, last));
-                    //	Отчитываемся пользователю о проделанной работе
+
                     Console.WriteLine($"{counter}) {c}{last} = {locals.Peek()}");
-                    //	Указываем, что нужно перейти к следующей итерации цикла
-                    //	 для того, чтобы пропустить остальной код
                     continue;
                 }
 
-                //	Получаем значения из стека в обратном порядке
                 double second = locals.Count > 0 ? locals.Pop() : 0,
                 first = locals.Count > 0 ? locals.Pop() : 0;
 
-                //	Получаем результат операции и заносим в стек
                 locals.Push(Execute(c, first, second));
-                //	Отчитываемся пользователю о проделанной работе
                 Console.WriteLine($"{counter}) {first} {c} {second} = {locals.Peek()}");
             }
         }

@@ -66,7 +66,7 @@ public class POLIZTests
         Assert.AreEqual(expected, result, 0.0001, "Ожидался результат 7 для выражения 3 + 4");
     }
     [TestMethod]
-    public void ConvetrToPoliz_ReturnCorrectExpression()
+    public void ConvertToPoliz_ReturnCorrectExpression()
     {
         string infix = "3 + a";
         string expectedPostfix = "3 +";
